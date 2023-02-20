@@ -5,14 +5,10 @@ from settings import*
 pygame.init()
 pygame.mixer.init()
 
-
-
-window_font = pygame.font.SysFont("Unispace", 30)
-
+window_font = pygame.font.SysFont("Arialblack", 27)
 
 snake_size = 10
-snake_speed = 13
-
+snake_speed = 10
 
 def display_score(score):
     score_text = window_font.render("Best Score : " +str(score), True, white)
@@ -40,9 +36,9 @@ def game():
         while game_ended:
 
             display.fill(darkgrey)
-            game_over_msg_1 = window_font.render("GAME OVER !", True, red)
-            game_over_msg_2 = window_font.render("Press spacebar to reset game !", True, red)
-            game_over_msg_3 = window_font.render("Press ESC to quit !", True, red)
+            game_over_msg_1 = window_font.render("YOU LOST !", True, yellow)
+            game_over_msg_2 = window_font.render("Press spacebar to reset game !", True, yellow)
+            game_over_msg_3 = window_font.render("Press ESC to quit !", True, yellow)
             display.blit(game_over_msg_1, [width / 3, height / 3])
             display.blit(game_over_msg_2, [width / 3 - 70, height / 3 + 30])
             display.blit(game_over_msg_3, [width / 3 - 35, height / 3 + 60])
@@ -85,8 +81,8 @@ def game():
         y += y_speed
 
         display.fill(darkgrey)
-        pygame.draw.rect(display, yellow, [target_x,target_y, snake_size, snake_size])
-        segments.append([x,y])
+        pygame.draw.rect(display, yellow, [target_x, target_y, snake_size, snake_size])
+        segments.append([x, y])
 
         if len(segments) > snake_length:
             del segments[0]

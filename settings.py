@@ -11,7 +11,7 @@ yellow = (255,255,0)
 width, height = 400, 400
 clock = pygame.time.Clock()
 display = pygame.display.set_mode((width, height))
-pygame.display.set_caption("Snake")
+pygame.display.set_caption("Expert Snake")
 
 
 
